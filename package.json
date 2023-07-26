@@ -1,0 +1,26 @@
+{
+  "name": "trello-clone",
+  "version": "1.0.0",
+  "description": "Application for creating and managing a task list",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hryhoriev94/trello-clone.git"
+  },
+  "keywords": [
+    "to-do",
+    "trello",
+    "react",
+    "typescript",
+    "node"
+  ],
+  "author": "Yurii Hryhoriev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hryhoriev94/trello-clone/issues"
+  },
+  "homepage": "https://github.com/Hryhoriev94/trello-clone#readme"
+}
