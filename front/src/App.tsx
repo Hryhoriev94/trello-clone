@@ -1,12 +1,42 @@
-import React from 'react';
+import React, {useState} from 'react';
+import Board from "./components/Board";
+import {ColumnType} from "./types/column";
+import {BoardType} from "./types/board";
+
+
+
+
+
+const dataColumns: ColumnType[] = [
+    {
+        id: 'njankcnkacnk',
+        name: 'default',
+        tasks: [
+            {
+                id: "task1",
+                name: 'First task',
+                body: 'body of task 1',
+                columnId: 'njankcnkacnk'
+            }
+        ]
+    }
+];
+
+const boardData:BoardType = {
+    id: 'bhbjhbjhcbjhzb',
+    columns: dataColumns
+}
 
 
 function App() {
-  return (
-    <div className="App">
 
-    </div>
-  );
+    const [board, setBoard] = useState(boardData);
+
+    return (
+        <div className='App'>
+            <Board id={board.id} columns={board.columns}/>
+        </div>
+    );
 }
 
 export default App;
