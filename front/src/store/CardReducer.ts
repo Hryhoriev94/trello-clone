@@ -17,10 +17,16 @@ export const cardSlice = createSlice({
         },
         removeCard: (state, action:PayloadAction<string>) => {
             delete state.cards[action.payload];
+        },
+        updateCardName: (state, action:PayloadAction<{id: string, name: string}>) => {
+            const {id, name } = action.payload;
+            if(state.cards[id]) {
+                state.cards[id].name = name;
+            }
         }
     }
 })
 
-export const {addCard, removeCard} = cardSlice.actions;
+export const {addCard, removeCard, updateCardName} = cardSlice.actions;
 
 export default cardSlice.reducer

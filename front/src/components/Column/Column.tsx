@@ -14,7 +14,7 @@ const Column = ({id, name} : ColumnType) => {
     return (
         <div className={styles.column}>
             <ColumnName initialName={name} columnId={id} />
-            <div className={'column-tasks flex flex-col gap-y-1'}>
+            <div className={styles.column__cards}>
                 {tasks.map(card => <Card id={card.id} columnId={card.columnId} name={card.name} body={card.body} key={card.id}/>)}
             </div>
             <AddCard columnId={id} />

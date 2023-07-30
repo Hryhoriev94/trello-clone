@@ -2,11 +2,17 @@
 
 .card {
   background-color: #fff;
-  padding: 2rem;
+  padding: 1rem 2rem;
   width: 100%;
   border-radius: $rounded;
-
+  position: relative;
+  &__name {
+    cursor: pointer;
+  }
   &__delete {
+    position: absolute;
+    right: 5%;
+    top: 10%;
     &:hover {
       color: #E03213;
     }
