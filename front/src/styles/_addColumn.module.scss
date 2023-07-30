@@ -1,0 +1,16 @@
+@import "variables";
+@import "mixins";
+.addColumn {
+  height: max-content;
+  cursor: pointer;
+  background-color: #ffffff3d;
+  border-radius: $rounded;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #fcfcfc;
+  @include px(1rem);
+  @include py(0.5rem);
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}

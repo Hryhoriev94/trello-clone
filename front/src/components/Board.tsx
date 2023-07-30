@@ -1,12 +1,24 @@
 import React from 'react';
-import BoardColumn from "./BoardColumn";
+import Column from "./Column";
 import { BoardType } from "../types/board";
+import AddColumn from "./AddColumn";
+import {useAppSelector} from "../hooks/useAppSelector";
+import styles from '../styles/_board.module.scss'
 
+const Board = ({id}: BoardType) => {
 
-const Board = ({columns}: BoardType) => {
+    const columns = useAppSelector((state) => Object.values(state.columns.columns).filter(column => column.boardId === id));
+
     return (
-        <div className='board flex items-start bg-indigo-500 w-full h-screen py-4 px-8'>
-            {columns.map((column, index) => <BoardColumn key={column.id} id={column.id} name={column.name} tasks={column.tasks} />)}
+        <div className={styles.board} style={{ "--columns": columns.length + 1 } as React.CSSProperties}>
+            {columns.map((column, index) =>
+                <Column
+                    key={column.id}
+                    boardId={id}
+                    id={column.id}
+                    name={column.name}
+                    tasks={column.tasks} />)}
+            <AddColumn boardId={id} />
         </div>
     );
 };

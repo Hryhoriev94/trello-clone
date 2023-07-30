@@ -3,7 +3,7 @@ import Board from "./components/Board";
 import {ColumnType} from "./types/column";
 import {BoardType} from "./types/board";
 
-
+const boardId = 'ndjnkcdnkdjcnknjcdksndknckj';
 
 
 
@@ -11,12 +11,13 @@ const dataColumns: ColumnType[] = [
     {
         id: 'njankcnkacnk',
         name: 'default',
+        boardId: boardId,
         tasks: [
             {
                 id: "task1",
                 name: 'First task',
                 body: 'body of task 1',
-                columnId: 'njankcnkacnk'
+                columnId: 'njankcnkacnk',
             }
         ]
     }

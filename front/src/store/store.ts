@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import tasksReducer from "./TasksReducer";
+import columnReducer from "./ColumnReducer";
 
 const store = configureStore({
     reducer: {
-        tasks: tasksReducer
+        tasks: tasksReducer,
+        columns: columnReducer
     }
 });
 
