@@ -7,7 +7,6 @@ import styles from '../styles/_addColumn.module.scss'
 
 
 const AddColumn = ({boardId}: AddColumnProps) => {
-    console.log(styles)
     const dispatch = useDispatch();
     const addNewColumn = () => {
         console.log(1)

@@ -5,4 +5,10 @@
   padding: 2rem;
   width: 100%;
   border-radius: $rounded;
+
+  &__delete {
+    &:hover {
+      color: #E03213;
+    }
+  }
 }
