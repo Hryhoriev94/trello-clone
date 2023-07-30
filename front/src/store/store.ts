@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tasksReducer from "./TasksReducer";
+import CardReducer from "./CardReducer";
 import columnReducer from "./ColumnReducer";
 
 const store = configureStore({
     reducer: {
-        tasks: tasksReducer,
+        cards: CardReducer,
         columns: columnReducer
     }
 });

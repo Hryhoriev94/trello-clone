@@ -17,7 +17,7 @@ const Board = ({id}: BoardType) => {
                     boardId={id}
                     id={column.id}
                     name={column.name}
-                    tasks={column.tasks} />)}
+                    cards={column.cards} />)}
             <AddColumn boardId={id} />
         </div>
     );

@@ -12,7 +12,7 @@ const AddColumn = ({boardId}: AddColumnProps) => {
         dispatch(addColumn({
             id: uuidv4(),
             name: 'New Column',
-            tasks: [],
+            cards: [],
             boardId: boardId
         }))
     }

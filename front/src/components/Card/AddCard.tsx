@@ -1,14 +1,14 @@
 import React from 'react';
-import {AddTaskProps} from "../interfaces/AddTaskProps";
+import {AddCardProps} from "../../interfaces/Card/AddCardProps";
 import {useDispatch} from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
-import {addTask} from "../store/TasksReducer";
+import {addCard} from "../../store/CardReducer";
 
 
-const AddTask = ({columnId}: AddTaskProps) => {
+const AddCard = ({columnId}: AddCardProps) => {
     const dispatch = useDispatch();
     const addNewTask = () => {
-        dispatch(addTask({
+        dispatch(addCard({
             id: uuidv4(),
             name: 'New Task',
             body: '',
@@ -23,4 +23,4 @@ const AddTask = ({columnId}: AddTaskProps) => {
     );
 };
 
-export default AddTask;
+export default AddCard;

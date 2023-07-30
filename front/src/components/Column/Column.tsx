@@ -1,7 +1,7 @@
 import React from 'react';
-import Task from "../Task";
+import Card from "../Card/Card";
 import {ColumnType} from "../../types/column";
-import AddTask from "../AddTask";
+import AddCard from "../Card/AddCard";
 import {useAppSelector} from "../../hooks/useAppSelector";
 import styles from '../../styles/_column.module.scss';
 import ColumnName from "./ColumnName";
@@ -9,15 +9,15 @@ import ColumnName from "./ColumnName";
 
 const Column = ({id, name} : ColumnType) => {
 
-    const tasks = useAppSelector((state) => Object.values(state.tasks.tasks).filter(task => task.columnId === id));
+    const tasks = useAppSelector((state) => Object.values(state.cards.cards).filter(card => card.columnId === id));
 
     return (
         <div className={styles.column}>
             <ColumnName initialName={name} columnId={id} />
             <div className={'column-tasks flex flex-col gap-y-1'}>
-                {tasks.map(task => <Task id={task.id} columnId={task.columnId} name={task.name} body={task.body} key={task.id}/>)}
+                {tasks.map(card => <Card id={card.id} columnId={card.columnId} name={card.name} body={card.body} key={card.id}/>)}
             </div>
-            <AddTask columnId={id} />
+            <AddCard columnId={id} />
         </div>
     );
 };

@@ -12,7 +12,7 @@ const dataColumns: ColumnType[] = [
         id: 'njankcnkacnk',
         name: 'default',
         boardId: boardId,
-        tasks: [
+        cards: [
             {
                 id: "task1",
                 name: 'First task',
