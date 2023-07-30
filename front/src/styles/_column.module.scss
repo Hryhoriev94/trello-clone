@@ -10,5 +10,15 @@
   @include py(1rem);
   &__name {
     color: rgb(23, 43, 77);
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+    h2, input {
+      @include px(0.5rem);
+      max-width: 100%;
+      font-size: 1.25rem;
+    }
+    input {
+      outline: none;
+    }
   }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
-import Column from "./Column";
+import Column from "./Column/Column";
 import { BoardType } from "../types/board";
-import AddColumn from "./AddColumn";
+import AddColumn from "./Column/AddColumn";
 import {useAppSelector} from "../hooks/useAppSelector";
 import styles from '../styles/_board.module.scss'
 
