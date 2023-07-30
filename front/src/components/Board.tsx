@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import Column from "./Column/Column";
 import { BoardType } from "../types/board";
 import AddColumn from "./Column/AddColumn";
@@ -7,7 +7,12 @@ import styles from '../styles/_board.module.scss'
 
 const Board = ({id}: BoardType) => {
 
-    const columns = useAppSelector((state) => Object.values(state.columns.columns).filter(column => column.boardId === id));
+    const columnsState = useAppSelector((state) => state.columns.columns);
+
+    const columns = useMemo(() => {
+        return Object.values(columnsState).filter(column => column.boardId === id);
+    }, [columnsState, id])
+
 
     return (
         <div className={styles.board} style={{ "--columns": columns.length + 1 } as React.CSSProperties}>

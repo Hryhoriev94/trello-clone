@@ -3,4 +3,5 @@ export type CardType = {
     columnId: string;
     name: string;
     body: string;
-};
+    index: number;
+}

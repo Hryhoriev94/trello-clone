@@ -7,7 +7,9 @@
   border-radius: $rounded;
   position: relative;
   &__name {
-    cursor: pointer;
+    &:hover {
+      cursor: pointer;
+    }
   }
   &__delete {
     position: absolute;
@@ -17,4 +19,8 @@
       color: #E03213;
     }
   }
+}
+
+.grabbed {
+    cursor: grabbing !important;
 }

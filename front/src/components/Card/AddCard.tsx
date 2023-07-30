@@ -1,18 +1,24 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import {AddCardProps} from "../../interfaces/Card/AddCardProps";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { v4 as uuidv4 } from 'uuid';
 import {addCard} from "../../store/CardReducer";
+import {RootState} from "../../store/store";
 
 
 const AddCard = ({columnId}: AddCardProps) => {
     const dispatch = useDispatch();
+    const cardsState = useSelector((state:RootState) => state.cards.cards);
+    const cardsCount = useMemo(() => {
+        return Object.values(cardsState).filter(card => card.columnId === columnId).length
+    }, [cardsState])
     const addNewTask = () => {
         dispatch(addCard({
             id: uuidv4(),
             name: 'New Task',
             body: '',
-            columnId: columnId
+            columnId: columnId,
+            index: cardsCount
         }))
     }
 

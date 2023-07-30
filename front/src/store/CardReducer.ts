@@ -23,6 +23,9 @@ export const cardSlice = createSlice({
             if(state.cards[id]) {
                 state.cards[id].name = name;
             }
+        },
+        moveCard: (state, action: PayloadAction<{id: string, columnId:string, index: number}>) => {
+
         }
     }
 })
